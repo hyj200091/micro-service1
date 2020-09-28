@@ -4,7 +4,7 @@ spring:
   application:
     name: content-center
   datasource:
-    url: jdbc:mysql://39.97.252.60:3306/content_center
+    url: jdbc:mysql://39.97.252.60:3306/content-center?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
     hikari:
       username: root
       password: hyj200091
@@ -13,7 +13,7 @@ spring:
     nacos:
       discovery:
         server-addr: 39.97.252.60:8848
-
+#        namespace: 4bce9045-12d2-4de3-9a49-2b53839564b7
 management:
   endpoints:
     web:
@@ -22,3 +22,11 @@ management:
   endpoint:
     health:
       show-details: always
+#user-center:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients: user-center

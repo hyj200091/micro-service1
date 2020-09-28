@@ -18,6 +18,12 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <!--        tk.mybatis起步脚手架 在yml就不需要配置mybatis相关信息-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

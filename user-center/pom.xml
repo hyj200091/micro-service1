@@ -30,11 +30,18 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>2.2.0.RELEASE</version>
         </dependency>
+<!--        热加载依赖-->
+<!--        <dependency>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-devtools</artifactId>-->
+<!--        <scope>runtime</scope>-->
+<!--        <optional>true</optional>-->
+<!--    </dependency>-->
+        <!--tk.mybatis起步脚手架 在yml就不需要配置mybatis相关信息-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
