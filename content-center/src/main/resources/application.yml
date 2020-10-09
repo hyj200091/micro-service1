@@ -1,19 +1,27 @@
 server:
-  port: 8088
+  port: 9595
 spring:
   application:
     name: content-center
+    #运行名词重名在feignclient上的注解name
+  main:
+    allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://39.97.252.60:3306/content-center?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/content-center?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     hikari:
       username: root
-      password: hyj200091
+      password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
         server-addr: 39.97.252.60:8848
 #        namespace: 4bce9045-12d2-4de3-9a49-2b53839564b7
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+
+# 健康管理端点 Spring Boot 监控
 management:
   endpoints:
     web:
@@ -22,11 +30,48 @@ management:
   endpoint:
     health:
       show-details: always
-#user-center:
-#  ribbon:
-#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
-#ribbon:
-#  eager-load:
+# ribbon负载均衡随机规则
+user-center:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# ribbon饥饿加载 提升首次访问的速度
+ribbon:
+  eager-load:
+    enabled: true
+    clients: user-center
+
+# feign配置日志
+logging:
+  level:
+    #feign的日志系统是建立在springboot上基础上的，此处一定是debug，否则都不会打印
+    com.soft1851.share.feignclient.UserCenterFeignClient: debug
+
+# feign细粒度配置(局部模块的配置)
+feign:
+  client:
+    config:
+      #想要调用的服务的名称
+      user-center:
+        loggerLevel: full
+#feign:全局配置
+#feign:
+#  client:
+#    config:
+#      #全局配置
+#      default:
+#        loggerLevel: full
+
+#  httpclient:
+#    # 让feign使用apache httpclient做请求，而不是默认的urlconnection
 #    enabled: true
-#    clients: user-center
+#    #feign的最大连接数
+#    max-connections: 200
+#    # feign单个路径的最大连接数
+#    max-connections-per-route: 50
+rocketmq:
+  name-server: 39.97.252.60:9876
+  producer:
+    group: test-group
+  #必须指定group

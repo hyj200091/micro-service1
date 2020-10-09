@@ -1,4 +1,4 @@
-package com.soft1851.share.entity;
+package com.soft1851.share.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,24 +11,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @ClassName User
+ * @ClassName MidUserShare
  * @Description TODO
  * @Author hyj
- * @Date 2020/9/27
+ * @Date 2020/9/29
  **/
-@Table(name = "t_user")
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class User {
+@Table(name = "mid_user_share")
+public class MidUserShare {
     @Id
     @GeneratedValue(generator = "JDBC")
     private Integer id;
 
-    @Column(name ="name")
-    private String name;
+    /**
+     * share.id
+     */
+    @Column(name = "share_id")
+    private Integer shareId;
 
-    @Column(name = "avatar")
-    private String avatar;
+    /**
+     * user.id
+     */
+    @Column(name = "user_id")
+    private Integer userId;
 }

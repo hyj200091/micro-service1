@@ -1,6 +1,6 @@
-package com.soft1851.share.mapper;
+package com.soft1851.share.dao;
 
-import com.soft1851.share.entity.User;
+import com.soft1851.share.domain.entity.User;
 import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.common.Mapper;
 

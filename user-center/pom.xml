@@ -17,7 +17,6 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,13 +30,13 @@
             <version>2.2.0.RELEASE</version>
         </dependency>
 <!--        热加载依赖-->
-<!--        <dependency>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-devtools</artifactId>-->
-<!--        <scope>runtime</scope>-->
-<!--        <optional>true</optional>-->
-<!--    </dependency>-->
-        <!--tk.mybatis起步脚手架 在yml就不需要配置mybatis相关信息-->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+    </dependency>
+<!--        tk.mybatis起步脚手架 在yml就不需要配置mybatis相关信息-->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
@@ -57,6 +56,13 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

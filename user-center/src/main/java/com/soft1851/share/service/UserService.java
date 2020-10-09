@@ -1,8 +1,6 @@
 package com.soft1851.share.service;
 
-import com.soft1851.share.entity.User;
-
-import java.util.List;
+import com.soft1851.share.domain.entity.User;
 
 /**
  * @ClassName UserService
@@ -12,8 +10,15 @@ import java.util.List;
  **/
 public interface UserService {
     /**
-     * 查询所有User信息
-     * @return list
+     * 根据id获得用户详情
+     * @param id
+     * @return User
      */
-    List<User> selectAll();
+    User findById(Integer id);
+
+    /**
+     * 修改积分 然后插入记录
+     * @param id
+     */
+    User insertById(Integer id);
 }
