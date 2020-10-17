@@ -7,8 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class NoticeServiceTest {
-@Autowired
-private NoticeService noticeService;
+    @Autowired
+    private NoticeService noticeService;
+
     @org.junit.jupiter.api.Test
     void getLatest() {
         Notice notice = noticeService.getLatest();

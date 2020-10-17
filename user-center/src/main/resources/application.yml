@@ -3,6 +3,14 @@ server:
 spring:
   application:
     name: user-center
+  zipkin:
+    base-url: http://localhost:9411/
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      #抽样率 默认是0.1
+      probability: 1.0
+
   datasource:
     url: jdbc:mysql://localhost:3306/user-center?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
     hikari:
@@ -13,7 +21,7 @@ spring:
     nacos:
       discovery:
         server-addr: 39.97.252.60:8848
-#        namespace: 4bce9045-12d2-4de3-9a49-2b53839564b7
+        #        namespace: 4bce9045-12d2-4de3-9a49-2b53839564b7
         metadata:
           instance: cpdd
           version: 1.0.0.0
@@ -29,3 +37,8 @@ management:
 
 rocketmq:
   name-server: 39.97.252.60:9876
+
+jwt:
+  secret: aaaaaaabbbbbbcccccdddddaaaaaaabbbbbbcccccdddddaaaaaaabbbbbbcccccddddd
+  # 有效期 单位秒 默认2周
+  expire-time-in-second: 1209600

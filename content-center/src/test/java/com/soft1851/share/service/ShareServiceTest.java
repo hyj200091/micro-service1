@@ -7,14 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+
 @SpringBootTest
 class ShareServiceTest {
-@Autowired
-private ShareService shareService;
+    @Autowired
+    private ShareService shareService;
+
     @Test
     void query() {
-        PageInfo<Share> query  = shareService.query(null,1,10,1);
+        PageInfo<Share> query = shareService.query(null, 1, 10, 1);
         List<Share> list = query.getList();
-        list.forEach(item-> System.out.println(item.getTitle()+','+item.getDownloadUrl()));
+        list.forEach(item -> System.out.println(item.getTitle() + ',' + item.getDownloadUrl()));
     }
 }

@@ -22,18 +22,20 @@ import java.util.Collections;
 public class SwaggerConfiguration {
     /**
      * swagger 信息
+     *
      * @return 页面信息
      */
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfo(
                 "share-app Swagger 文档",
                 "github地址 https://github.com/hyj200091/micro1-service",
                 "API V1.0",
                 "Terms of service",
-                new Contact("空白","https://houyuejia.cn","yuejia200091@gmail.com"),
-                "Apache","http://www.apache.org/", Collections.emptyList());
+                new Contact("空白", "https://houyuejia.cn", "yuejia200091@gmail.com"),
+                "Apache", "http://www.apache.org/", Collections.emptyList());
 
     }
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

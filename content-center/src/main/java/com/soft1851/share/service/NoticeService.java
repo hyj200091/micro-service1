@@ -12,6 +12,7 @@ public interface NoticeService {
 
     /**
      * 查询最新公告
+     *
      * @return Notices
      */
     Notice getLatest();

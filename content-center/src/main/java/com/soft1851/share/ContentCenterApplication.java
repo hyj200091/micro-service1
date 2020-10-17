@@ -23,6 +23,7 @@ public class ContentCenterApplication {
 
     /**
      * 创建一个restTemplate实例
+     *
      * @return RestTemplate
      */
 //    @Bean
@@ -30,9 +31,8 @@ public class ContentCenterApplication {
 //    public RestTemplate restTemplate(){
 //        return new RestTemplate();
 //    }
-
     @Bean
-    public AsyncRestTemplate restTemplate(){
+    public AsyncRestTemplate restTemplate() {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
         // 设置链接超时时间
         factory.setConnectTimeout(100);

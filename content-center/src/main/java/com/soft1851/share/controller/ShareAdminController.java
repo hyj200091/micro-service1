@@ -20,13 +20,14 @@ public class ShareAdminController {
     private final ShareService shareService;
 
     @PutMapping(value = "/audit/{id}")
-    public Share auditById(@PathVariable Integer id, @RequestBody ShareAuditDto shareAuditDto){
+    public Share auditById(@PathVariable Integer id, @RequestBody ShareAuditDto shareAuditDto) {
         //此处需要认证授权
-        return this.shareService.auditById(id,shareAuditDto);
+        return this.shareService.auditById(id, shareAuditDto);
     }
+
     @PutMapping(value = "/auditInsert/{id}")
-    public Share auditInsertById(@PathVariable Integer id, @RequestBody ShareAuditDto shareAuditDto){
+    public Share auditInsertById(@PathVariable Integer id, @RequestBody ShareAuditDto shareAuditDto) {
         //此处需要认证授权
-        return this.shareService.insertBlog(id,shareAuditDto);
+        return this.shareService.insertBlog(id, shareAuditDto);
     }
 }

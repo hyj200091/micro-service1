@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @Author hyj
  * @Date 2020/9/30
  **/
-@FeignClient(name = "baidu",url = "http://www.baidu.com")
+@FeignClient(name = "baidu", url = "http://www.baidu.com")
 public interface TestBaiduFeignClient {
     /**
      * 第三方接入 不是本地的模块
+     *
      * @return
      */
     @GetMapping("")

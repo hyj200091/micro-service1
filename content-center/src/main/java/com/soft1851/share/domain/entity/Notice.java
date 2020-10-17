@@ -24,18 +24,18 @@ import java.util.Date;
 @Table(name = "notice")
 @ApiModel("公告")
 public class Notice {
-    @ApiModelProperty(name = "id",value = "公告id")
+    @ApiModelProperty(name = "id", value = "公告id")
     private Integer id;
 
-    @ApiModelProperty(name = "content",value = "公告内容")
+    @ApiModelProperty(name = "content", value = "公告内容")
     private String content;
 
-    @ApiModelProperty(name = "showFlag" ,value = "是否显示0：否 1：是")
+    @ApiModelProperty(name = "showFlag", value = "是否显示0：否 1：是")
     private Boolean showFlag;
 
-    @ApiModelProperty(name = "createTime",value = "创建时间")
+    @ApiModelProperty(name = "createTime", value = "创建时间")
 //    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     //东八时区
-    @JsonFormat(locale = "zh",timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 }

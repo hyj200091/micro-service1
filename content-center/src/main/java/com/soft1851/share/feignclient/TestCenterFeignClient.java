@@ -17,9 +17,10 @@ public interface TestCenterFeignClient {
 
     /**
      * 查询某个User对象
+     *
      * @param userDto
      * @return userDto
      */
     @GetMapping("/user/q")
-    UserDto query(@SpringQueryMap  UserDto userDto);
+    UserDto query(@SpringQueryMap UserDto userDto);
 }

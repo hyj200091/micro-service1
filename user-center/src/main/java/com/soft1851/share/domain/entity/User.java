@@ -17,7 +17,7 @@ import java.util.Date;
  * @Author hyj
  * @Date 2020/9/27
  **/
-@Table(name = "user")
+@Table(name="user")
 @Builder
 @Data
 @NoArgsConstructor

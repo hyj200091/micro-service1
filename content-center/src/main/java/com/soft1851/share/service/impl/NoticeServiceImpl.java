@@ -20,13 +20,14 @@ import tk.mybatis.mapper.entity.Example;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class NoticeServiceImpl implements NoticeService {
     private final NoticeMapper noticeMapper;
+
     @Override
     public Notice getLatest() {
         Example example = new Example(Notice.class);
         // 按id降序排列
         example.setOrderByClause("id DESC");
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("showFlag",1);
+        criteria.andEqualTo("showFlag", 1);
         return noticeMapper.selectByExample(example).get(0);
     }
 }

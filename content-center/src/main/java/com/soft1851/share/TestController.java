@@ -34,10 +34,11 @@ public class TestController {
 
     /**
      * 测试服务发现 证明内容中心总能找到用户
+     *
      * @return 用户中心所有实例列表
      */
     @GetMapping("/discovery")
-    public List<ServiceInstance> getInstances(){
+    public List<ServiceInstance> getInstances() {
         //查询指定服务的所有实例信息，使用的是spring cloud接口和具体实现的组件无关
         //consul eureka zookeeper 都可以使用
         return this.discoveryClient.getInstances("user-center");
@@ -45,10 +46,10 @@ public class TestController {
 
 //    @GetMapping("/call/hello")
 //    public String callUserCenter(){
-        //用户中心所有的实例
+    //用户中心所有的实例
 //        List<ServiceInstance> instances = discoveryClient.getInstances("user-center");
-        //stream编程 lambda表达式 函数式编程
-        // 理解这段代码的含义？它实现了什么功能
+    //stream编程 lambda表达式 函数式编程
+    // 理解这段代码的含义？它实现了什么功能
 //        String targetUrl = instances.stream()
 ////                .map(instance -> instance.getUri().toString() + "/user/hello")
 ////                .findFirst()
@@ -79,27 +80,30 @@ public class TestController {
     private TestCenterFeignClient testCenterFeignClient;
 
     @GetMapping("/test-q")
-    public UserDto query(UserDto userDto){
+    public UserDto query(UserDto userDto) {
         return testCenterFeignClient.query(userDto);
     }
 
     @Autowired
     private TestBaiduFeignClient testBaiduFeignClient;
+
     @GetMapping("/baidu")
-    public String BaiduIndex(){
+    public String BaiduIndex() {
         return testBaiduFeignClient.index();
     }
+
     @GetMapping("/docker/test")
-    public String TestDocker(){
+    public String TestDocker() {
         return "docker test!!!";
     }
 
     @GetMapping("/ByResource")
-    @SentinelResource(value = "ByResource",blockHandler = "handleException")
-    public String byResource(){
+    @SentinelResource(value = "ByResource", blockHandler = "handleException")
+    public String byResource() {
         return "按名称限流";
     }
-    public String handleException(BlockException blockException){
+
+    public String handleException(BlockException blockException) {
         return "服务不可调用";
     }
 }

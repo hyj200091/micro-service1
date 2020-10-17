@@ -24,7 +24,7 @@ import java.util.Date;
 @Slf4j
 public class ContentController {
 
-private final AsyncRestTemplate asyncRestTemplate;
+    private final AsyncRestTemplate asyncRestTemplate;
 
 //    private final RestTemplate restTemplate;
 //
@@ -44,13 +44,14 @@ private final AsyncRestTemplate asyncRestTemplate;
             public void onFailure(Throwable ex) {
                 System.err.println("-----调用接口失败-------");
             }
+
             //调用成功
             @Override
             public void onSuccess(ResponseEntity<String> result) {
-                System.out.println("--->异步调用成功, result = "+result.getBody());
+                System.out.println("--->异步调用成功, result = " + result.getBody());
             }
         });
-        return new Date()+"--->>>异步调用结束";
+        return new Date() + "--->>>异步调用结束";
     }
 
 }

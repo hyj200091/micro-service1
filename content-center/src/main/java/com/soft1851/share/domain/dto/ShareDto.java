@@ -20,10 +20,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @ApiModel("分享详情，带发布人昵称")
 public class ShareDto {
-    @ApiModelProperty(name = "share",value = "分享资源信息")
+    @ApiModelProperty(name = "share", value = "分享资源信息")
     private Share share;
 
-    @ApiModelProperty(name = "wxNickname",value = "发布人昵称")
+    @ApiModelProperty(name = "wxNickname", value = "发布人昵称")
     private String wxNickname;
 //    /**
 //     * id

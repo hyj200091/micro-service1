@@ -20,7 +20,7 @@ import java.util.Date;
  * @Date 2020/10/8
  **/
 @Service
-@RocketMQMessageListener(consumerGroup = "consumer",topic = "add-bonus")
+@RocketMQMessageListener(consumerGroup = "consumer", topic = "add-bonus")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDto> {
 
@@ -32,16 +32,15 @@ public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDto> {
         // 1 为用户加积分
         Integer userId = userAddBonusMsgDto.getUserId();
         User user = this.userMapper.selectByPrimaryKey(userId);
-        user.setBonus(user.getBonus()+userAddBonusMsgDto.getBonus());
+        user.setBonus(user.getBonus() + userAddBonusMsgDto.getBonus());
         this.userMapper.updateByPrimaryKeySelective(user);
         //2 写积分日志
-
         this.bonusEventLogMapper.insert(BonusEventLog.builder()
                 .userId(userId)
                 .value(userAddBonusMsgDto.getBonus())
                 .event("CONTRIBUTE")
                 .createTime(new Date())
-                .description("投稿加分")
+                .description("投稿加积分")
                 .build());
     }
 }
