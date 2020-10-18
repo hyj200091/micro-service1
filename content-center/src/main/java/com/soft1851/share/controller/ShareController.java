@@ -40,6 +40,7 @@ public class ShareController {
         return this.shareService.findById(id);
     }
 
+    @ApiOperation(value = "获取该用户的投稿", notes = "获取该用户的投稿")
     @GetMapping(value = "/myapply/{id}")
     public List<Share> getMyAppList(@RequestParam Integer id){
         return  this.shareService.getApply(id);
@@ -84,6 +85,7 @@ public class ShareController {
 
     @PostMapping("/exchange")
     @CheckLogin
+    @ApiOperation(value = "兑换分享接口", notes = "兑换分享接口")
     public Share exchange(@RequestBody ExchangeDTO exchangeDTO) {
         System.out.println(exchangeDTO + ">>>>>>>>>>>>");
         return this.shareService.exchange(exchangeDTO);

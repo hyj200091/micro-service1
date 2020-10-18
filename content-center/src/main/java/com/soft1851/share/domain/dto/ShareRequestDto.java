@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel("投稿")
+@ApiModel("投稿详情")
 public class ShareRequestDto {
     @ApiModelProperty(name = "userId", value = "分享人id")
     private Integer userId;

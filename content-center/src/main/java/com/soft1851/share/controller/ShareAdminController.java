@@ -3,6 +3,8 @@ package com.soft1851.share.controller;
 import com.soft1851.share.domain.dto.ShareAuditDto;
 import com.soft1851.share.domain.entity.Share;
 import com.soft1851.share.service.ShareService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +18,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/admin/shares")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Api(tags = "兑换接口",value = "提供相关兑换积分的Rest API")
 public class ShareAdminController {
     private final ShareService shareService;
 
+    @ApiOperation(value = "兑换某个分享",notes = "兑换某个分享")
     @PutMapping(value = "/audit/{id}")
     public Share auditById(@PathVariable Integer id, @RequestBody ShareAuditDto shareAuditDto) {
         //此处需要认证授权

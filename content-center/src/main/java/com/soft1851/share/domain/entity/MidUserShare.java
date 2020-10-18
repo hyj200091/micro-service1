@@ -1,5 +1,7 @@
 package com.soft1851.share.domain.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,20 +23,24 @@ import javax.persistence.Table;
 @Builder
 @Data
 @Table(name = "mid_user_share")
+@ApiModel("用户分享")
 public class MidUserShare {
     @Id
     @GeneratedValue(generator = "JDBC")
+    @ApiModelProperty(name = "id", value = "id")
     private Integer id;
 
     /**
      * share.id
      */
     @Column(name = "share_id")
+    @ApiModelProperty(name = "id", value = "分享id")
     private Integer shareId;
 
     /**
      * user.id
      */
     @Column(name = "user_id")
+    @ApiModelProperty(name = "id", value = "用户id")
     private Integer userId;
 }
