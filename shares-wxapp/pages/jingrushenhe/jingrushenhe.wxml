@@ -1,0 +1,24 @@
+<!--pages/jingrushenhe/jingrushenhe.wxml-->
+<view class="tougao-info">
+  <text class="title">标题:{{shares.title}}</text>
+  <view class="tougao-author">
+    <text>作者:{{shares.author}}</text>
+    <text>投稿时间:{{shares.createTime}}</text>
+  </view>
+  <image src="{{shares.cover}}" />
+  <text class="jianjie">简介：{{shares.summary}}</text>
+  <!-- 下拉需要显示审核状态的列表 -->
+  <!-- <view class="select_box" wx:if="{{select}}">
+    </view> -->
+<view class='select_box'>
+ <view class='select' catchtap='selectTap'>
+  <text class='select_text'>{{selectData[index]}}</text>
+  <image class='select_img {{show&&"select_img_rotate"}}' src='/images/jifen.png'></image>   
+ </view>
+ <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+  <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+ </view>
+</view>
+<input class="inputreason" type="text" placeholder="请输入原因" name="reason" value="" bindinput="forName"/>
+<button class="submit" bindtap="submit">提交审核</button>
+</view>

@@ -1,0 +1,113 @@
+/* pages/jingrushenhe/jingrushenhe.wxss */
+.select_box{
+  background: #fff;
+  width: 70%;
+  position: absolute;
+  top: 650rpx;
+  left: 15rpx;
+ }
+ .select{
+  box-sizing: border-box;
+  width: 70%;
+  height: 70rpx;
+  border:1px solid #efefef;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+ }
+ .select_text{
+  font-size: 30rpx;
+  flex: 1;
+ }
+ .select_img{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  transition:transform 0.3s;
+ }
+ .select_img_rotate{
+  transform:rotate(180deg); 
+ }
+ .option_box{
+  position: absolute;
+  top: 70rpx;
+  width: 70%;
+  border:1px solid #efefef;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+  transition: height 0.3s;
+ }
+ .option{
+  display: block;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+ }
+
+
+
+
+text{
+  font-size: 16px;
+}
+.tougao-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* border-bottom: 2rpx solid dimgray; */
+}
+.tougao-author{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+align-items: center;
+
+}
+.tougao-author text{
+  font-size:0.9rem;
+  
+}
+.tougao-author text:nth-child(2) {
+  font-size: 0.7rem;
+  color: rgb(104, 102, 102);
+}
+
+image {
+  width: 99%;
+  height: 160px;
+  margin-top: 10px;
+}
+.jianjie {
+  text-align: left;
+  margin-left: 0;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+.zhuangtai {
+  width: 100%;
+  text-align: right;
+  color: rgb(104, 102, 102);
+  font-size: 0.7rem;
+}
+.submit{
+  margin-top: 150rpx;
+  width: 100%;
+  color: #fff;
+  background-color: red;
+}
+.inputreason{
+  border: 1rpx solid dimgray;
+  margin-top: 100rpx;
+  margin-left: 300rpx;
+  width: 250rpx;
+}

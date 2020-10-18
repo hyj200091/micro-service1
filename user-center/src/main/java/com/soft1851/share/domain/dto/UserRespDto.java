@@ -23,4 +23,6 @@ public class UserRespDto {
     private Integer bonus;
 
     private String wxNickname;
+
+    private String roles;
 }

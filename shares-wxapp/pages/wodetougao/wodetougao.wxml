@@ -1,0 +1,14 @@
+<!--pages/wodetougao/wodetougao.wxml-->
+<view class="tougao-info" wx:for="{{shares}}" wx:for-item="share">
+  <text class="title">标题:{{share.title}}</text>
+  <view class="tougao-author">
+    <text>作者:{{share.author}}</text>
+    <text>投稿时间:{{share.createTime}}</text>
+  </view>
+  <image src="{{share.cover}}" />
+  <text class="jianjie">简介：{{share.summary}}</text>
+  <text wx:if="{{share.auditStatus == 'NOT_YET'}}" class="zhuangtai">审核状态：待审核</text>
+  <text wx:if="{{share.auditStatus == 'REJECT'}}" class="zhuangtai">审核状态：不通过</text>
+  <text wx:if="{{share.auditStatus == 'PASS'}}" class="zhuangtai">审核状态：已通过</text>
+</view>
+

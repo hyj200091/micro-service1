@@ -1,0 +1,45 @@
+<!--pages/shenghetougao/shenghetougao.wxml-->
+<view class="container">
+
+<!-- tab -->
+<view class="tab">
+<view class="tab-item {{tab==0? 'active':''}}" data-tab="0" bindtap="changeTab">待审核</view>
+<view class="tab-item {{tab==1? 'active':''}}" data-tab="1" bindtap="changeTab">已审核</view>
+</view>
+
+<!-- tab1 -->
+<view class="share-list" wx:if="{{tab==0}}">
+<view wx:for="{{shareList}}" wx:for-item="share" class="share-item">
+<view wx:if="{{share.isOriginal==0}}" class="origin-label {{share.isOriginal==0? 'one':'two'}}">原创</view>
+<view wx:else class="origin-label {{share.isOriginal==0? 'one':'two'}}">转载</view>
+<image src="{{share.cover}}"></image>
+<view class="item-main" data-item="{{share}}" bindtap="goDetail">
+<text class="item-title">{{share.title}}</text>
+<text class="item-summary">{{share.summary}}</text>
+</view>
+<view class="item-duihuan">
+<text data-item="{{share}}" bindtap="jingrushenhe">进入审核</text>
+</view>
+</view>
+</view>
+
+<!-- tab2 -->
+<view wx:else class="dicription">
+<view wx:for="{{shareList1}}" wx:for-item="share" class="share-item">
+<view wx:if="{{share.isOriginal==0}}" class="origin-label {{share.isOriginal==0? 'one':'two'}}">原创</view>
+<view wx:else class="origin-label {{share.isOriginal==0? 'one':'two'}}">转载</view>
+<image src="{{share.cover}}"></image>
+<view class="item-main" data-item="{{share}}">
+<text class="item-title">{{share.title}}</text>
+<text class="item-summary">{{share.summary}}</text>
+</view>
+<view class="item-duihuan">
+<text data-item="{{share}}">审核成功</text>
+</view>
+</view>
+
+
+</view>
+
+</view>
+

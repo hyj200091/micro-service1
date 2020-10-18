@@ -40,10 +40,16 @@ public class ShareController {
         return this.shareService.findById(id);
     }
 
+    @GetMapping(value = "/myapply/{id}")
+    public List<Share> getMyAppList(@RequestParam Integer id){
+        return  this.shareService.getApply(id);
+    }
+
     @GetMapping(value = "/query")
     @ApiOperation(value = "分享列表", notes = "分享列表")
     public List<Share> query(
             @RequestParam(required = false) String title,
+//            @RequestParam(required = true) int showFlag,
             @RequestParam(required = false, defaultValue = "1") Integer pageNo,
             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
             @RequestHeader(value = "X-Token",required = false) String token){

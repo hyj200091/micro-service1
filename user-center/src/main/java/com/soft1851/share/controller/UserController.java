@@ -101,6 +101,7 @@ public class UserController {
                 .wxNickname(user.getWxNickname())
                 .avatarUrl(user.getAvatarUrl())
                 .bonus(user.getBonus())
+                .roles(user.getRoles())
                 .build())
         .token(JwtTokenRespDto
           .builder()

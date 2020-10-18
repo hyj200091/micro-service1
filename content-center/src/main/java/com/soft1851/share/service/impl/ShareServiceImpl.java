@@ -70,14 +70,21 @@ public class ShareServiceImpl implements ShareService {
     }
 
     @Override
-    public PageInfo<Share> query(String title, Integer pageNo, Integer pageSize, Integer userId) {
+    public PageInfo<Share> query(String title ,Integer pageNo, Integer pageSize, Integer userId) {
         // 启动分页
         PageHelper.startPage(pageNo, pageSize);
         //构造查询实例
         Example example = new Example(Share.class);
         Example.Criteria criteria = example.createCriteria();
         //如标题关键字不空，则加上模糊查询，否则结果即所有数据
-        if (StringUtil.isNotEmpty(title)) {
+        //此时这个地方进行判断 前端传回来的参数
+            criteria.andEqualTo("auditStatus","PASS");
+
+//        if (StringUtil.isNotEmpty(title)) {
+//            criteria.andEqualTo("showFlag",showFlag);
+//            criteria.andLike("title", "%" + title + "%");
+//        }
+        if (StringUtil.isNotEmpty(title)){
             criteria.andLike("title", "%" + title + "%");
         }
         // 执行按条件查询
@@ -132,7 +139,7 @@ public class ShareServiceImpl implements ShareService {
                 .cover("https://img1.doubanio.com/view/subject/s/public/s1495029.jpg")
                 .buyCount(10)
                 .auditStatus("NOT_YET")
-                .showFlag(1)
+                .showFlag(0)
                 .reason("no")
                 .build();
         int n = this.shareMapper.insert(share);
@@ -260,5 +267,15 @@ public class ShareServiceImpl implements ShareService {
             this.userCenterFeignClient.insertBlog(userId);
         }
         return share;
+    }
+
+    @Override
+    public List<Share> getApply(Integer id) {
+        Example example = new Example(Share.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId",id);
+        criteria.andEqualTo("auditStatus","NOT_YET");
+        List<Share> list = this.shareMapper.selectByExample(example);
+        return  list;
     }
 }

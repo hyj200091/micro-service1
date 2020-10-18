@@ -1,0 +1,39 @@
+/* pages/application/application.wxss */
+.contain{
+display: flex;
+justify-content: flex-start;
+padding-left:6rpx;
+z-index: 800rpx;
+}
+.wenzi{
+  color: black;
+  font-weight: 500;
+  font-size: 34rpx;
+}
+.content{
+  position: absolute;
+  top: 160rpx;
+  z-index:600rpx;
+  width: 100%;
+}
+.content view{
+  line-height: 80rpx;
+  margin: 10rpx;
+  height: 80rpx;
+  display: flex;
+  flex: 1;
+}
+.content view input{
+  margin: 0 auto;
+  margin-top: 12rpx;
+}
+.radio{
+  margin-left: 580rpx;
+}
+.contain button{
+  width: 96%;
+  color: aliceblue;
+  background-color: #ff4344;
+  line-height: 80rpx;
+  margin-left: 6rpx;
+}

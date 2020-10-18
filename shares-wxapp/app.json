@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/application/application",
+    "pages/personal/personal",
+    "pages/duihuanSuccess/duihuanSuccess", 
+    "pages/shareDetail/shareDetail",
+    "pages/jifenmingxi/jifenmingxi",
+    "pages/wodeduihuan/wodeduihuan",
+    "pages/wodetougao/wodetougao",
+    "pages/shenghetougao/shenghetougao",
+    "pages/jingrushenhe/jingrushenhe"
+  ],
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#FF4444",
+    "backgroundColor": "#fffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye1.png"
+      },
+      {
+        "pagePath": "pages/application/application",
+        "text": "投稿",
+        "iconPath": "images/tougao.png",
+        "selectedIconPath": "images/tougao1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode1.png"
+      }
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#FF4444",
+      "navigationBarTitleText": "知识分享",
+      "navigationBarTextStyle": "white"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+  },
+  "sitemapLocation": "sitemap65.json"
+}

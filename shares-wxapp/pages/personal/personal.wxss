@@ -1,0 +1,56 @@
+/* pages/personal/personal.wxss */
+.topView{
+  padding-top: 15rpx;
+  z-index: 500rpx;
+}
+.topView .avatar{
+  border-radius: 50%;
+  width: 170rpx;
+  height: 170rpx;
+  margin-left: 300rpx;
+}
+.topView .textView{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.qdBtn{
+  margin-top: 15rpx;
+  line-height: 60rpx;
+  font-size: small;
+  width: 130rpx;
+  height: 60rpx;
+  color: aliceblue;
+  background-color: #44bb0f;
+}
+.centerView{
+  margin-top: 60rpx;
+  z-index:500rpx;
+}
+.centerView view{
+  line-height: 70rpx;
+  display: flex;
+  padding-left: 20rpx;
+  height: 70rpx;
+  flex: 1;
+  justify-content: space-between;
+}
+.notBtn{
+  margin-top: 10rpx;
+  line-height: 80rpx;
+  width: 100%;
+  height: 80rpx;
+  background-color: darkgray;
+  color: aliceblue;
+}
+.sqBtn{
+  border: none;
+}
+.qiandao{
+  padding: 10rpx;
+  background-color: rgb(19, 140, 19);
+  color: #fff;
+  font-size: 28rpx;
+  width: 100rpx;
+  text-align: center;
+  }

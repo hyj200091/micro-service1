@@ -1,0 +1,51 @@
+<view class="contain">
+<!-- 文本区域 -->
+<text class="wenzi">说明：投稿审核通过后会有积分奖励，资源被下载会有积分奖励；提交的资源不得包含广告，侵权信息，百度盘地址建议有密码</text>
+<!-- 中间内容部分 -->
+<view class="content">
+  <!-- 是否原创 -->
+  <radio-group bindchange="radioChange">
+  <view>
+    <text>原创</text>
+    <radio bindtap="change" class="radio" value="0" checked="true"></radio>
+  </view>
+  <!-- 是否装载 -->
+  <view>
+    <text>转载</text>
+    <radio bindtap="change" class="radio" value="1"></radio>
+  </view>
+</radio-group>
+<form bindsubmit="formSubmit">
+  <!-- 标题 -->
+  <view>
+    <text>标题</text>
+    <input type="text" name="title" value="{{title}}"  placeholder="请输入标题"/>
+  </view>
+  <!-- 作者 -->
+  <view>
+    <text>作者</text>
+    <input type="text" name="author" value="{{author}}" placeholder="请输入作者"/>
+  </view>
+  <!-- 价格 -->
+  <view>
+    <text>价格</text>
+    <input type="text"  name="price" value="{{price}}" placeholder="请输入价格"/>
+  </view>
+  <!-- 简介 -->
+  <view>
+    <text>简介</text>
+    <input type="text"  name="summary" value="{{summary}}" placeholder="介绍一下技术干货吧"/>
+  </view>
+  <!-- 下载地址 -->
+  <view>
+    <text>下载地址</text>
+    <input type="text"  name="downloadUrl" value="{{downloadUrl}}"  placeholder="请输入下载地址"/>
+  </view>
+  <!-- 提交按钮 -->
+  <view>
+    <button form-type="submit">提交</button>
+  </view>
+</form>
+</view>
+
+</view>

@@ -82,4 +82,12 @@ public interface ShareService {
      * @return share
      */
     Share insertBlog(@PathVariable Integer id, ShareAuditDto shareAuditDto);
+
+    /**
+     * 查询我的投稿接口  根据userId 和数据库的某一字段进行筛选
+     * @param id
+     * @return
+     */
+    List<Share> getApply(Integer id);
+
 }
